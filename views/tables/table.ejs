@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Poker Crusade</title>
+	</head>
+	<body>
+		<h1>Table: <%- name %></h1>
+
+		<h2>Players</h2>
+
+		<ul>
+			<% for(var i=0; i<users.length; i++) { %>
+			<li><%- users[i].email %></li>
+			<% } %>
+		</ul>
+
+		<h2>Seats</h2>
+
+		<ul>
+			<% for(var i=0; i<numSeats; i++) { %>
+			<li>Seat <%- i+1 %>: <% if(seats[i] && seats[i].user){ %><%- seats[i].user %><% } else { %><button>Sit</button><% } %></li>
+			<% } %>
+	</body>
+
+	<script src="/external/socket.io.js"></script>
+		<script>
+		var socket = io('http://localhost:8000');
+
+		socket.on('connect', function() {
+			console.log('connected');
+		});
+		</script>
+</html>

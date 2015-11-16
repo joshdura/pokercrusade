@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Poker Crusade</title>
+	</head>
+	<body>
+		<h1>Tables Online: <%- tables.length %></h1>
+
+		<ul>
+		<% for(var i=0; i<tables.length; i++){ %>
+			<li><a href="/table/<%- tables[i].id %>"><%- tables[i].name %></a></li>
+		<% } %>
+		</ul>
+
+		<p><a href="/logout">Logout</a></p>
+	</body>
+</html>

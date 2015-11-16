@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Poker Crusade</title>
+	</head>
+	<body>
+		<h1>Sign up</h1>
+		<% if (message.length > 0) { %>
+			<p><%- message %></p>
+		<% } %>
+		<form action="/join" method="POST">
+			<p>
+				<label for="email">Email</label> <input type="text" id="email" name="email" placeholder="user@domain.com"/>
+			</p>
+			<p>
+				<label for="password">Password</label> <input type="password" id="password" name="password" placeholder="Password"/>
+			</p>
+			<p><input type="submit" value="Sign Up"/></p>
+		</form>
+	</body>
+</html>
